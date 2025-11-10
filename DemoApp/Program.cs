@@ -7,6 +7,15 @@ class Program
         Console.Write("Введіть ваше ім'я: ");
         var userName = Console.ReadLine();
 
-        Console.WriteLine($"Вітаю {userName}!");
+        Console.Write("Введіть ваш вік: ");
+        var ageInput = Console.ReadLine();
+
+        if (!int.TryParse(ageInput, out var age))
+        {
+            Console.WriteLine("Помилка: вік має бути числом.");
+            return;
+        }
+
+        Console.WriteLine($"Користувач: {userName}, вік: {age}");
     }
 }
